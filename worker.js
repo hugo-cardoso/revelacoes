@@ -1,4 +1,4 @@
-var CACHE_NAME = 'my-cache-v4';
+var CACHE_NAME = 'my-cache-v5';
 var urlsToCache = [
 'index.html',
 'css/style.css',
@@ -7,7 +7,10 @@ var urlsToCache = [
 'js/app.js',
 'js/angular-moment.min.js',
 'js/moment.min.js',
-'img/logo_192.png'
+'img/logo_192.png',
+'img/favicon-16x16.png',
+'img/favicon-32x32.png',
+'img/favicon-96x196.png'
 ];
 
 self.addEventListener('install', function(event) {
