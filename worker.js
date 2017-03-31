@@ -1,11 +1,11 @@
-var CACHE_NAME = 'my-cache-v3';
+var CACHE_NAME = 'my-cache-v4';
 var urlsToCache = [
 'index.html',
 'css/style.css',
 'css/grid12.css',
 'js/angular.min.js',
 'js/app.js',
-'js/angular.moment.min.js',
+'js/angular-moment.min.js',
 'js/moment.min.js',
 'img/logo_192.png'
 ];
