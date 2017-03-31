@@ -28,6 +28,10 @@ p{
 	display: block !important;
 }
 
+.no-active{
+	display: none !important;
+}
+
 header{
 	width: 100%;
 	height: 250px;
