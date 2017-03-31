@@ -2,11 +2,17 @@ var app = angular.module('reveal', ["firebase","angularMoment"]);
 
 app.controller('appController', function($scope, $firebaseArray) {
 
-	$scope.reveals = $firebaseArray(firebase.database().ref().child("reveals"));
+	if(navigator.onLine){
 
-	$scope.reveals.$loaded().then(function(x) {
-		$scope.revealsOk = true;
-	})
+		$scope.reveals = $firebaseArray(firebase.database().ref().child("reveals"));
+
+		$scope.reveals.$loaded().then(function(x) {
+			$scope.revealsOk = true;
+		})
+
+	}else{
+		$scope.offline = true;
+	}
 
 	$scope.addReveal = function(reveal){
 
