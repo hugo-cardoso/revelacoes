@@ -25,6 +25,8 @@ app.controller('appController', function($scope, $firebaseArray) {
 			"date": date
 		});
 
+		$scope.reveal = "";
+
 	}
 	
 });
