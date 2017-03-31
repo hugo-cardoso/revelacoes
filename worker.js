@@ -1,8 +1,13 @@
-var CACHE_NAME = 'my-cache-v2';
+var CACHE_NAME = 'my-cache-v3';
 var urlsToCache = [
 'index.html',
 'css/style.css',
-'css/grid12.css'
+'css/grid12.css',
+'js/angular.min.js',
+'js/app.js',
+'js/angular.moment.min.js',
+'js/moment.min.js',
+'img/logo_192.png'
 ];
 
 self.addEventListener('install', function(event) {
