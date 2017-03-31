@@ -1,31 +1,53 @@
 var app = angular.module('reveal', ["firebase","angularMoment"]);
 
-app.controller('appController', function($scope, $firebaseArray) {
+app.controller('appController', function($scope, $firebaseArray, $timeout) {
 
-	if(navigator.onLine){
+	$scope.reveals = $firebaseArray(firebase.database().ref().child("reveals"));
 
-		$scope.reveals = $firebaseArray(firebase.database().ref().child("reveals"));
+	$scope.reveals.$loaded().then(function(x) {
+		$scope.revealsOk = true;
+	})
 
-		$scope.reveals.$loaded().then(function(x) {
-			$scope.revealsOk = true;
-		})
+	$scope.noSpam = function(){
 
-	}else{
-		$scope.offline = true;
+		$scope.postLock = true;
+
+		$timeout(function(){
+
+			$scope.postLock = false;
+
+		}, 5 * 60000)
+
 	}
 
 	$scope.addReveal = function(reveal){
 
 		var date = String(moment());
 
-		console.log(date)
+		if(reveal){
 
-		$scope.reveals.$add({
-			"reveal": reveal,
-			"date": date
+			$scope.reveals.$add({
+				"reveal": reveal,
+				"date": date
+			});
+
+			$scope.reveal = "";
+
+			$scope.noSpam();
+
+		}
+
+	}
+
+	$scope.comment = function(key,comment){
+
+		$scope.comments = $firebaseArray(firebase.database().ref().child("reveals/" + key + "/comments"));
+
+		$scope.comments.$add({
+			"comment": comment
 		});
 
-		$scope.reveal = "";
+		$scope.input.comment = "";
 
 	}
 	

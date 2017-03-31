@@ -67,6 +67,16 @@ header > h1.title{
 	color: #FFF;
 }
 
+.btn.btn-block{
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+}
+
+.btn.btn-small{
+	font-size: 0.7rem;
+}
+
 .card{
 	width: calc(100% - 30px);
 	height: auto;
@@ -87,16 +97,17 @@ header > h1.title{
 	margin-bottom: 15px;
 }
 
-.card.secret > .details{
-	text-align: right;
+.card.secret .details{
 	text-transform: uppercase;
 	font-size: 0.9rem;
 	color: #797979;
 	font-weight: 300;
 }
 
-.card.secret > .details > span.date{
-	font-weight: 700;
+.card.secret .details  div.square{
+	width: 0.9rem;
+	height: 0.9rem;
+	background: #e91e63;
 }
 
 .divider{
@@ -109,6 +120,10 @@ header > h1.title{
 	color: #757575;
 }
 
+.card.login input{
+	margin-bottom: 15px;
+}
+
 textarea.post{
 	width: 100%;
 	color: gray;
@@ -117,6 +132,43 @@ textarea.post{
 	padding: 5px;
 	font-size: 1.2rem;
 }
+
+input{
+	width: 100%;
+	color: gray;
+	border: 0px;
+	resize: none;
+	padding: 10px;
+	font-size: 1.2rem;
+	border: 1px solid #e91e63;
+}
+
+input.input-small{
+	padding: 7px;
+	font-size: 0.9rem;
+}
+
+.coments{
+	display: none;
+}
+
+.coments ul{
+	font-size: 0.9rem;
+	font-weight: 300;
+}
+
+.collapse{
+	display: none !important;
+	height: 0px;
+	transition: 1s;
+}
+
+.collapsed{
+	display: block !important;
+	height: auto;
+	transition: 1s;
+}
+
 
 @media (min-width: 768px) 
 {

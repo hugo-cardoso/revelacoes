@@ -7,6 +7,7 @@
 	<meta property="og:image" content="img/logo_192.png">
 	<meta property="og:description" content="Aqui você pode revelar todos os seus segredos.">
 	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<meta name="theme-color" content="#e91e63">
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" type="text/css" href="css/grid12.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -38,6 +39,7 @@
 
 		<div class="container">
 
+			<!-- Post -->
 			<div class="card post">
 
 				<div class="row">
@@ -52,7 +54,7 @@
 
 						<div class="col-sm-2">
 
-							<input class="post btn btn-primary" type="submit" value="Contar" />
+							<input ng-disabled="postLock" class="post btn btn-primary" type="submit" value="Contar" />
 
 						</div>
 
@@ -68,11 +70,48 @@
 					Revelações
 				</div>
 
-				<div class="card secret" ng-repeat="data in reveals | orderBy: '-date'">
-					<div class="details">
-						<span ng-bind="data.date | amDateFormat : 'DD/MM/YY'"></span> <span ng-bind="data.date | amDateFormat : 'HH:mm'"></span>
+				<div class="card secret" ng-repeat="(key, data) in reveals | orderBy: '-date'">
+
+					<div style="width: 100%;" ng-click="collapse = !collapse">
+
+						<div class="details row">
+							<div class="col-xs-6">
+								<div class="square">
+
+								</div>
+							</div>
+							<div class="col-xs-6" style="text-align: right;">
+								<span ng-bind="data.date | amDateFormat : 'DD/MM/YY'"></span> <span ng-bind="data.date | amDateFormat : 'HH:mm'"></span>
+							</div>
+
+						</div>
+
+						<p ng-bind="data.reveal"></p>
+
 					</div>
-					<p ng-bind="data.reveal"></p>
+
+					<div ng-class="{'collapsed' : collapse}" class="coments">
+
+						<ul>
+							<li ng-repeat="comment in data.comments">{{comment.comment}}</li>
+						</ul>
+
+					</div>
+
+					<div class="row">
+
+						<form ng-submit="comment(data.$id,input.comment)">
+							<div class="col-xs-10">
+								<input type="text" class="input-small" placeholder="Faça um comentário..." ng-model="input.comment">
+							</div>
+
+							<div class="col-xs-2">
+								<input type="submit" class="btn btn-primary btn-small btn-block" value="Enviar">
+							</div>
+						</form>
+
+					</div>
+
 				</div>
 
 			</div>
