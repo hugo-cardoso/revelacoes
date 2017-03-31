@@ -1,4 +1,4 @@
-var CACHE_NAME = 'my-cache-v5';
+var CACHE_NAME = 'my-cache-v7';
 var urlsToCache = [
 'index.html',
 'css/style.css',
@@ -10,7 +10,7 @@ var urlsToCache = [
 'img/logo_192.png',
 'img/favicon-16x16.png',
 'img/favicon-32x32.png',
-'img/favicon-96x196.png'
+'img/favicon-96x96.png'
 ];
 
 self.addEventListener('install', function(event) {
