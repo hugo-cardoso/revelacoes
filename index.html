@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" type="text/css" href="css/grid12.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+	<script>
+
+		if('serviceWorker' in navigator){
+
+			console.log("OK")
+
+			navigator.serviceWorker.register("worker.js");
+
+		}
+
+	</script>
+</head>
+<body>
+
+	<div class="body">
+
+		<header>
+
+			<h1 class="title">Revelações.</h1>
+
+		</header>
+
+		<div class="container">
+
+			<div class="card post">
+
+				<div class="row">
+
+					<form>
+
+						<div class="col-md-10">
+
+							<textarea class="post" rows="5" placeholder="Digite aqui o seu segredo..." /></textarea>
+
+						</div>
+
+						<div class="col-sm-2">
+
+							<input class="post btn btn-primary" type="submit" value="Contar" />
+
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+			
+			<div class="card secret">
+				<div class="details">
+					31/03/17 12:52
+				</div>
+				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+	</html>

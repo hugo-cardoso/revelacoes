@@ -1,0 +1,9 @@
+{
+	"short_name": "Revelações",
+	"name": "Revelações",
+	"start_url": "index.html",
+	"orientation": "portrait",
+	"display": "standalone",
+	"theme_color": "#E91E63",
+	"background-color": "#E91E63"
+}
