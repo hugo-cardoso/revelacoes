@@ -1,0 +1,173 @@
+html,body{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	background: #eaeaea;
+	font-family: 'Roboto', sans-serif;
+}
+
+*:focus{
+	outline: none;
+}
+
+p{
+	font-weight: 500;
+}
+
+.body{
+	background: #eaeaea;
+	width: 100%;
+}
+
+.container{
+	width: 800px;
+	margin: auto;
+}
+
+.active{
+	display: block !important;
+}
+
+.no-active{
+	display: none !important;
+}
+
+header{
+	width: 100%;
+	height: 250px;
+	display: flex;
+	margin-bottom: 15px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e91e63+0,f44336+100 */
+	background: #e91e63; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e91e63 0%, #f44336 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #e91e63 0%,#f44336 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #e91e63 0%,#f44336 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e91e63', endColorstr='#f44336',GradientType=0 ); /* IE6-9 */
+
+}
+
+header > h1.title{
+	color: #FFF;
+	margin: auto;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+/*Components*/
+
+.btn{
+	border: 0px;
+	margin: 0px;
+	text-transform: uppercase;
+	font-size: 1rem;
+}
+
+.btn.btn-primary{
+	background: #F44336;
+	color: #FFF;
+}
+
+.card{
+	width: calc(100% - 30px);
+	height: auto;
+	background: #FFF;
+	border-radius: 2px;
+	padding: 15px;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.24);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.24);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.24);
+}
+
+.card p{
+	color: #212121;
+	white-space: pre-wrap;
+}
+
+.card.secret{
+	margin-bottom: 15px;
+}
+
+.card.secret > .details{
+	text-align: right;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	color: #797979;
+	font-weight: 300;
+}
+
+.card.secret > .details > span.date{
+	font-weight: 700;
+}
+
+.divider{
+	width: 100%; 
+	height: 50px; 
+	text-align: center; 
+	line-height: 50px; 
+	font-size: 0.85rem; 
+	text-transform: uppercase; 
+	color: #757575;
+}
+
+textarea.post{
+	width: 100%;
+	color: gray;
+	border: 0px;
+	resize: none;
+	padding: 5px;
+	font-size: 1.2rem;
+}
+
+@media (min-width: 768px) 
+{
+	textarea.post{
+		height: 100%;
+	}
+
+	input.post{
+		width: 100%;
+		height: 100%; 
+	}
+
+	.card.post{
+		height: 150px;
+	}
+
+	.card.post div, .card.post form{
+		height: 100%;
+	}
+
+}
+
+@media (max-width: 768px) 
+{
+	.container{
+		width: 100%;
+	}
+
+	.card{
+		width: 100%;
+	}
+
+	header{
+		height: 100px;
+	}
+
+	.card.post{
+		height: auto;
+	}
+
+	.card.post div, .card.post form{
+		height: auto;
+	}
+
+	textarea.post{
+		height: 150px;
+	}
+
+	input.post{
+		width: 100%;
+		height: 50px; 
+	}
+
+}
